@@ -38,5 +38,7 @@ public class increaseOp {
         System.out.println("y = " + y);
         System.out.println("z = " + z);
 
+        //비트반전 연산자
+        System.out.println("10을 ~ 연산 적용하면? " + ~10);
     }
 }
