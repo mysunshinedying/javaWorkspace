@@ -40,8 +40,8 @@ public class Score_ex {
                     System.out.println("점수를 먼저 입력해주세요.");
                 }  else {
                     for (int i = 0; i < scores.length; i++) {
-                        System.out.printf("scores[%d]: %d", i, scores[i]);
-                        System.out.println();
+                        System.out.printf("scores[%d]: %d%n", i, scores[i]);
+
                     }
                 }
             } else if (selected == 4) { //분석

@@ -42,3 +42,17 @@ Random Number 생성(Math.Random과 Random 메서드)
 
 ## Section 02
 배열을 포함한 연습문제
+
+## Section 03
+2차원 배열 및 비정규 배열
+
+## Section 04
+열거형 타입
+
+
+# Chapter 06
+## Section 01
+메서드
+
+## Section 02
+클래스
