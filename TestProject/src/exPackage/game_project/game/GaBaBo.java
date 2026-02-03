@@ -3,7 +3,7 @@ package exPackage.game_project.game;
 import java.util.Scanner;
 
 public class GaBaBo {
-    private static final String[] handSelect = { "", "가위", "바위", "보" }; //가위바위보 출력용
+    private static final String[] HANDSELECT = { "", "가위", "바위", "보" }; //가위바위보 출력용
     Scanner sc = new Scanner(System.in);
     int answer;
     int computerAnswer;
@@ -51,7 +51,7 @@ public class GaBaBo {
 
     public void versusResult(){
         System.out.println(result);
-        System.out.println("컴퓨터는 " + handSelect[computerAnswer] + "입니다.");
+        System.out.println("컴퓨터는 " + HANDSELECT[computerAnswer] + "입니다.");
     }
 
 }
