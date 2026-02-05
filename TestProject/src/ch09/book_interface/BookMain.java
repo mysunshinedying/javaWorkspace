@@ -2,6 +2,7 @@ package ch09.book_interface;
 //제출은 나중에
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class BookMain {
@@ -18,7 +19,7 @@ public class BookMain {
 
         IBookDAO idao = new BookDAO();
         BookDTO dto = null;
-        BookDTO mDTO = null;
+        BookDTO bDTO = null;
 
         do {
             System.out.println("--------------------------------------------------------------");
@@ -56,21 +57,32 @@ public class BookMain {
                     break;
                 case 3:
                     System.out.println("전체 책 정보를 조회합니다.");
-                    ArrayList<BookDTO> ar = idao.getAllBooks();
-                    System.out.println(ar);
+                    List<BookDTO> ar = idao.getAllBooks();
+                    if(ar.isEmpty()) { //isEmpty 활용하기
+                        System.out.println("등록된 책이 없습니다.");
+                    } else {
+                        for (BookDTO book : ar) {
+                            System.out.println("(" + book.getBookClass() + ") 도서명:" + book.getBookName() + ", 저자:" + book.getBookAuthor() + ", 출판사:" + book.getBookPublisher() + ", 발행년도:" + book.getBookYear() + ", 청구번호:" + book.getBookCode());
+                        }
+                    }
                     break;
                 case 4:
                     System.out.println("책 정보를 조회합니다.");
-                    System.out.print("청구 번호 입력 : ");
-                    bookCode = sc.next();
-                    mDTO = idao.SearchBook(bookCode);
-                    System.out.println(mDTO);
+                    System.out.print("찾을 책 제목 : ");
+                    bookName = sc.nextLine();
+                    bDTO = idao.SearchBook(bookName);
+                    if(bDTO == null) {
+                        System.out.println("해당 제목의 장서가 조회되지 않습니다.");
+                    } else {
+                        System.out.println("****" + bookName + " 정보 ****");
+                        System.out.println("(" + bDTO.getBookClass() + ") 도서명:" + bDTO.getBookName() + ", 저자:" + bDTO.getBookAuthor() + ", 출판사:" + bDTO.getBookPublisher() + ", 발행년도:" + bDTO.getBookYear() + ", 청구번호:" + bDTO.getBookCode());
+                    }
                     break;
                 case 5:
                     System.out.println("책 정보를 수정합니다.");
                     System.out.print("수정할 책 청구 번호 입력 : ");
                     bookCode = sc.next();
-                    mDTO = idao.SearchBook(bookCode);
+                    bDTO = idao.SearchBook(bookCode);
                     System.out.println();
 
                     System.out.print("청구 번호 입력 : ");

@@ -1,12 +1,12 @@
 package ch09.book_interface;
 
 public class BookDTO {
-    String bookCode; //책 청구번호
-    String bookName; //책 이름
-    String bookAuthor; //책 저자
-    String bookPublisher; //출판사
-    String bookClass; //분류법
-    String bookYear; //책 발행년도
+    private String bookCode; //책 청구번호
+    private String bookName; //책 이름
+    private String bookAuthor; //책 저자
+    private String bookPublisher; //출판사
+    private String bookClass; //분류법
+    private String bookYear; //책 발행년도
 
     public BookDTO( String bookCode, String bookName, String bookAuthor, String bookPublisher, String bookClass, String bookYear) {
         this.bookCode = bookCode;
@@ -65,8 +65,4 @@ public class BookDTO {
         this.bookYear = bookYear;
     }
 
-    @Override
-    public String toString() {
-        return "(" + getBookClass() + ") 도서명:" + getBookName() + ", 저자:" + getBookAuthor() + ", 출판사:" + getBookPublisher() + ", 발행년도:" + getBookYear() + ", 청구번호:" + getBookCode();
-    }
 }
