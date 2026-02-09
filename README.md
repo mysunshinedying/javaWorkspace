@@ -1,8 +1,10 @@
 # javaWorkspace
-
 ## 자바 수업 관련 예제 게시용 repo
-
 This repository contains example code from my Java class.
+
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+
+---
 
 # Chapter 02
 ## Section 01
